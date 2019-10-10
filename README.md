@@ -42,3 +42,6 @@ Random Number Generator without repeat
 给定min和max，每次call generate()都会生成一个在(min, max)范围内的随机数，但是每个数字最多return一次。所有数字都用尽后重置。
 follow up是增加一个update(min, max)方法可以更新min和max，但即使更新了之后也不能return已经return过的数。
 还问了这个generator是不是thread safe，如果不用数组做怎么做
+可以参考leetcode 380
+基本就是维护一个数组和一个hash table。数组中是available的number，hash table中记录每个数的index。每次random出一个数就把这个数和数组最后一个数对换位置然后pop from the end of array。
+不用数组的做法我没有想出来
